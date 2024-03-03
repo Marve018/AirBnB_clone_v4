@@ -11,6 +11,7 @@
     <title>HBnB</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js?cache_id={{ cache_id }}"></script>
     <script src="static/scripts/1-hbnb.js?cache_id={{ cache_id }}"></script>
+
   </head>
   <body>
     <header>
@@ -41,12 +42,40 @@
 	  <h4>&nbsp;</h4>
 	  <div class="popover">
 	    <ul>
-            <!-- {% for amenity in amenities %} -->
             <li>
-                <input type="checkbox" id="amenity_{{ amenity.id }}" name="amenities" value="{{ amenity.id }}"
-                       style="position: relative; left: 10px;"
-                       data-id="{{ amenity.id }}" data-name="{{ amenity.name }}">
-                <label for="amenity_{{ amenity.id }}">{{ amenity.name }}</label>
+                <input type="checkbox" id="amenity_room_service" name="amenities" value="room_service"
+                       data-name="Room Service" data-id="1">
+                <label for="amenity_room_service"> Room Service</label>
+            </li>
+            <li>
+                <input type="checkbox" id="amenity_power" name="amenities" value="power"
+                       data-name="24 Hour Power" data-id="2">
+                <label for="amenity_power"> 24 Hour Power</label>
+            </li>
+            <li>
+                <input type="checkbox" id="amenity_breakfast" name="amenities" value="breakfast"
+                       data-name="Breakfast" data-id="3">
+                <label for="amenity_breakfast"> Breakfast</label>
+            </li>
+            <li>
+                <input type="checkbox" id="amenity_dinner" name="amenities" value="dinner"
+                       data-name="Dinner" data-id="4">
+                <label for="amenity_dinner"> Dinner</label>
+            </li>
+            <li>
+                <input type="checkbox" id="amenity_cabletv" name="amenities" value="cabletv"
+                       data-name="Dinner" data-id="5">
+                <label for="amenity_cabletv"> CableTV</label>
+            </li>
+            <li>
+                <input type="checkbox" id="amenity_dogs" name="amenities" value="dogs"
+                       data-name="Dinner" data-id="6">
+                <label for="amenity_dogs"> Dogs</label>
+            </li>
+            <li>
+                <input type="checkbox" id="amenity_doorman" name="amenities" value="doorman"
+                       data-name="Dinner" data-id="7">
+                <label for="amenity_doorman"> Doorman</label>
             </li>
             <!-- {% endfor %} -->
         </ul>
