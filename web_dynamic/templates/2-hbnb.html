@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../static/styles/4-common.css?cache_id={{ cache_id }}">
+    <link rel="stylesheet" type="text/css" href="../static/styles/3-header.css?cache_id={{ cache_id }}">
+    <link rel="stylesheet" type="text/css" href="../static/styles/3-footer.css?cache_id={{ cache_id }}">
+    <link rel="stylesheet" type="text/css" href="../static/styles/6-filters.css?cache_id={{ cache_id }}">
+    <link type="text/css" rel="stylesheet" href="../static/styles/8-places.css?cache_id={{ cache_id }}">
+    <link rel="icon" href="../static/images/icon.png" />
+    <title>HBnB</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js?cache_id={{ cache_id }}"></script>
+    <script src="static/scripts/2-hbnb.js?cache_id={{ cache_id }}"></script>
+
+  </head>
+  <body>
+    <header>
+      <div class="logo"></div>
+      <div id="api_status" class="available"></div>
+    </header>
+    <div class="container">
+      <section class="filters">
+	<div class="locations">
+	  <h3>States</h3>
+	  <h4>&nbsp;</h4>
+	  <div class="popover">
+	    <ul>
+	      <!-- {% for state in states %}
+	      <li>
+		<h2>{{ state[0].name }}:</h2>
+		<ul>
+		  {% for city in state[1] %}
+		  <li>{{ city.name }}</li>
+		  {% endfor %}
+		</ul>
+	      </li>
+	      {% endfor %} -->
+	    </ul>
+	  </div>
+	</div>
+	<div class="amenities">
+	  <h3>Amenities</h3>
+	  <h4>&nbsp;</h4>
+	  <div class="popover">
+	    <ul>
+            <li>
+                <input type="checkbox" id="amenity_room_service" name="amenities" value="room_service"
+                       data-name="Room Service" data-id="1">
+                <label for="amenity_room_service"> Room Service</label>
+            </li>
+            <li>
+                <input type="checkbox" id="amenity_power" name="amenities" value="power"
+                       data-name="24 Hour Power" data-id="2">
+                <label for="amenity_power"> 24 Hour Power</label>
+            </li>
+            <li>
+                <input type="checkbox" id="amenity_breakfast" name="amenities" value="breakfast"
+                       data-name="Breakfast" data-id="3">
+                <label for="amenity_breakfast"> Breakfast</label>
+            </li>
+            <li>
+                <input type="checkbox" id="amenity_dinner" name="amenities" value="dinner"
+                       data-name="Dinner" data-id="4">
+                <label for="amenity_dinner"> Dinner</label>
+            </li>
+            <li>
+                <input type="checkbox" id="amenity_cabletv" name="amenities" value="cabletv"
+                       data-name="Dinner" data-id="5">
+                <label for="amenity_cabletv"> CableTV</label>
+            </li>
+            <li>
+                <input type="checkbox" id="amenity_dogs" name="amenities" value="dogs"
+                       data-name="Dinner" data-id="6">
+                <label for="amenity_dogs"> Dogs</label>
+            </li>
+            <li>
+                <input type="checkbox" id="amenity_doorman" name="amenities" value="doorman"
+                       data-name="Dinner" data-id="7">
+                <label for="amenity_doorman"> Doorman</label>
+            </li>
+            <!-- {% endfor %} -->
+        </ul>
+	  </div>
+	</div>
+	<button type="button">Search</button>
+      </section>
+      <div class="placesh1"><h1>Places</h1></div>
+      <section class="places">
+	<!-- <h1>Places</h1> -->
+	{% for place in places %}
+	<article>
+	  <div class="title_box">
+	    <h2>{{ place.name }}</h2>
+	    <div class="price_by_night">${{ place.price_by_night }}</div>
+	  </div>
+	  <div class="information">
+	    <div class="max_guest">{{ place.max_guest }} Guest{% if place.max_guest != 1 %}s{% endif %}</div>
+            <div class="number_rooms">{{ place.number_rooms }} Bedroom{% if place.number_rooms != 1 %}s{% endif %}</div>
+            <div class="number_bathrooms">{{ place.number_bathrooms }} Bathroom{% if place.number_bathrooms != 1 %}s{% endif %}</div>
+	  </div>
+	  <div class="user">
+            <b>Owner:</b> {{ place.user.first_name }} {{ place.user.last_name }}
+          </div>
+          <div class="description">
+	    {{ place.description | safe }}
+          </div>
+	</article>
+	{% endfor %}
+      </section>
+    </div>
+    <footer>
+      <p>Holberton School</p>
+    </footer>
+  </body>
+</html>
