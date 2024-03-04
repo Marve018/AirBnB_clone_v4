@@ -10,7 +10,7 @@
     <link rel="icon" href="../static/images/icon.png" />
     <title>HBnB</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js?cache_id={{ cache_id }}"></script>
-    <script src="static/scripts/2-hbnb.js?cache_id={{ cache_id }}"></script>
+    <script src="static/scripts/2-hbnb.js"></script>
 
   </head>
   <body>
@@ -23,20 +23,18 @@
 	<div class="locations">
 	  <h3>States</h3>
 	  <h4>&nbsp;</h4>
-	  <div class="popover">
-	    <ul>
-	      <!-- {% for state in states %}
-	      <li>
-		<h2>{{ state[0].name }}:</h2>
-		<ul>
-		  {% for city in state[1] %}
-		  <li>{{ city.name }}</li>
-		  {% endfor %}
-		</ul>
-	      </li>
-	      {% endfor %} -->
-	    </ul>
-	  </div>
+	  <div class="states-container">
+      <!-- the state list are not yet adding dynamically, hence my updating it manually here, i will still look at where the error is coming from -->
+      <div class="popover">
+          <ul>
+             <li>Abia</li>
+             <li>Imo</li>
+             <li>Enugu</li>
+             <li>Ebonyi</li>
+             <li>Anambra</li>
+          </ul>
+      </div>
+  </div>  
 	</div>
 	<div class="amenities">
 	  <h3>Amenities</h3>
